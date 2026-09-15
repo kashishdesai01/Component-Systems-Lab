@@ -1,0 +1,49 @@
+{
+  "name": "component-systems-lab",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "build:tokens": "pnpm --filter @csl/tokens build",
+    "build:ui": "pnpm --filter @csl/ui build",
+    "build": "pnpm build:tokens && pnpm build:ui && pnpm --filter @csl/docs build",
+    "dev": "pnpm build:tokens && pnpm build:ui && pnpm --filter @csl/docs dev",
+    "typecheck": "pnpm build:tokens && pnpm build:ui && pnpm -r typecheck",
+    "lint": "eslint packages/ui/src packages/docs --ignore-pattern .next --ignore-pattern out",
+    "test": "pnpm build:tokens && pnpm build:ui && vitest run",
+    "test:coverage": "pnpm build:tokens && pnpm build:ui && vitest run --coverage",
+    "test:e2e": "pnpm --filter @csl/e2e test",
+    "test:mutations": "node scripts/check-mutations.mjs",
+    "measure:bundle": "node scripts/measure-bundle.mjs",
+    "serve": "node scripts/serve.mjs",
+    "verify:consumer": "node scripts/verify-consumer.mjs",
+    "changeset": "changeset",
+    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm verify:consumer && pnpm test:e2e && pnpm --filter @csl/e2e exec playwright test --config consumer.config.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.29.8",
+    "@eslint/js": "9.39.2",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.1",
+    "@types/node": "22.19.7",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitest/coverage-v8": "5.0.3",
+    "axe-core": "4.11.1",
+    "eslint": "9.39.2",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "globals": "17.0.0",
+    "jsdom": "30.1.2",
+    "prettier": "3.9.10",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.53.1",
+    "vitest": "5.0.3"
+  }
+}

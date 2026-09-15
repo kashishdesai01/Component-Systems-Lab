@@ -1,0 +1,5 @@
+packages:
+  - packages/*
+  - '!packages/consumer'
+allowBuilds:
+  esbuild: true
