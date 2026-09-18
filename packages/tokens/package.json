@@ -1,0 +1,32 @@
+{
+  "name": "@csl/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Semantic design tokens and explicit contrast contracts for Component Systems Lab",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./css": "./dist/tokens.css",
+    "./tailwind": "./dist/tailwind.css",
+    "./contrast": {
+      "types": "./dist/contrast.d.mts",
+      "import": "./dist/contrast.mjs"
+    }
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "vitest run tests",
+    "typecheck": "node scripts/build.mjs --check"
+  },
+  "license": "MIT"
+}
