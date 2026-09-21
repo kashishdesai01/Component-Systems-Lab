@@ -1,0 +1,36 @@
+.group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+.legend {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 650;
+  font-size: 0.9rem;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+.option input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--csl-accent);
+}
+.option input:focus-visible {
+  outline: 3px solid var(--csl-focus, #005fcc);
+  outline-offset: 3px;
+}
+@media (forced-colors: active) {
+  .option input:focus-visible {
+    outline-color: Highlight;
+  }
+}

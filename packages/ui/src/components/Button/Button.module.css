@@ -1,0 +1,67 @@
+.button {
+  font: inherit;
+  font-weight: 650;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--csl-radius-control, 0.65rem);
+  min-height: 44px;
+  padding: 0.7rem 1.1rem;
+  cursor: pointer;
+  transition: background-color 120ms;
+}
+.button:focus-visible {
+  outline: 3px solid var(--csl-focus, #005fcc);
+  outline-offset: 3px;
+}
+.primary {
+  background: var(--csl-accent);
+  color: var(--csl-on-accent);
+}
+.primary:hover:not(:disabled):not([aria-disabled='true']) {
+  background: var(--csl-accent-hover);
+}
+.secondary {
+  background: var(--csl-surface);
+  color: var(--csl-text);
+  border-color: var(--csl-border);
+}
+.ghost {
+  background: transparent;
+  color: var(--csl-text);
+}
+.danger {
+  background: var(--csl-danger);
+  color: var(--csl-on-danger);
+}
+.sm {
+  padding: 0.4rem 0.7rem;
+  min-height: 36px;
+}
+.md {
+  min-height: 44px;
+}
+.icon {
+  min-width: 44px;
+  padding: 0.6rem;
+}
+.button:disabled,
+.button[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
+@media (forced-colors: active) {
+  .button {
+    border-color: ButtonText;
+  }
+  .button:focus-visible {
+    outline-color: Highlight;
+  }
+}
