@@ -1,0 +1,36 @@
+.dialog {
+  box-sizing: border-box;
+  width: min(480px, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  padding: 1.75rem;
+  border: 1px solid var(--csl-border);
+  border-radius: 1rem;
+  background: var(--csl-surface-raised);
+  color: var(--csl-text);
+}
+.dialog::backdrop {
+  background: #061c1bd0;
+}
+.title {
+  margin: 0 0 0.8rem;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+.title:focus-visible {
+  outline: 3px solid var(--csl-focus, #005fcc);
+  outline-offset: 3px;
+}
+.description {
+  margin: 0 0 1.4rem;
+  color: var(--csl-text-muted);
+  line-height: 1.6;
+}
+@media (forced-colors: active) {
+  .title:focus-visible {
+    outline-color: Highlight;
+  }
+  .dialog {
+    border: 2px solid CanvasText;
+  }
+}

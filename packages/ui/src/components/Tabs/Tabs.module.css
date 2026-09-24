@@ -1,0 +1,42 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  border-bottom: 1px solid var(--csl-border);
+  padding-bottom: 0.4rem;
+}
+.tab {
+  font: inherit;
+  color: var(--csl-text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: 0.4rem;
+  padding: 0.75rem 1rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+.tab[aria-selected='true'] {
+  color: var(--csl-on-accent);
+  background: var(--csl-accent);
+}
+.tab:focus-visible,
+.panel:focus-visible {
+  outline: 3px solid var(--csl-focus, #005fcc);
+  outline-offset: 3px;
+}
+.panel {
+  padding: 1.25rem 0;
+  line-height: 1.6;
+}
+.panel[hidden] {
+  display: none;
+}
+@media (forced-colors: active) {
+  .tab[aria-selected='true'] {
+    border: 2px solid Highlight;
+  }
+  .tab:focus-visible,
+  .panel:focus-visible {
+    outline-color: Highlight;
+  }
+}
