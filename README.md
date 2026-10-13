@@ -90,12 +90,10 @@ See [verification results](docs/verification.md), [engineering notes](docs/engin
 
 Native semantics, accessible names, keyboard paths, focus management and form relationships are specified beside each component. Automated checks cover defined states and preserve inconclusive axe results for inspection.
 
-Manual screen-reader compatibility, actual browser zoom, text-only resizing, operating-system forced colors and inclusive user testing remain unverified. Automated results do not establish WCAG conformance. Nested dialogs, iframe/shadow-root modal navigation, submenus, vertical/dynamic tabs, Toast and Combobox are outside the current scope.
-
-See the [support contract](docs/reliability-contract.md), [manual audit ledger](docs/a11y-audit.md) and [known limitations](docs/known-limitations.md).
+Manual screen-reader compatibility, actual browser zoom, text-only resizing, operating-system forced colors and inclusive user testing remain unverified.
 
 ## Delivery
 
-GitHub Actions runs type checking, lint, unit tests, package-consumer verification and browser checks. Azure Static Web Apps deployment is available through a manual workflow and requires an `AZURE_STATIC_WEB_APPS_API_TOKEN` repository secret. The documentation is a static export; it has no request-time SSR or backend.
+GitHub Actions runs type checking, lint, unit tests, package-consumer verification and browser checks. Azure Static Web Apps deployment is available through a manual workflow and requires an `AZURE_STATIC_WEB_APPS_API_TOKEN` repository secret. 
 
 Changesets manages package versions and changelogs. Packages remain private and are not published to npm. Initial commit organization is documented in [repository history](docs/history.md).
